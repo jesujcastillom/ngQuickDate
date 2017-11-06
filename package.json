@@ -6,7 +6,7 @@
     "url": "http://adamalbrecht.com"
   },
   "scripts": {
-    "prepublish": "grunt"
+    "prepublish": "grunt build"
   },
   "repository": {
     "url": "git@github.com:jesujcastillom/ngQuickDate.git"
