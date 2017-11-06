@@ -24,6 +24,7 @@ app.provider "ngQuickDateDefaults", ->
       prevLinkHtml: '&larr; Prev'
       disableTimepicker: false
       disableClearButton: false
+      disableOkButton: false
       defaultTime: null
       dayAbbreviations: ["Su", "M", "Tu", "W", "Th", "F", "Sa"],
       dateFilter: null
@@ -386,13 +387,13 @@ app.directive "quickDatepicker", ['ngQuickDateDefaults', '$filter', '$sce', (ngQ
                   </thead>
                   <tbody>
                     <tr ng-repeat='week in weeks'>
-                      <td ng-mousedown='selectDate(day.date, true, true)' ng-click='$event.preventDefault()' ng-class='{"other-month": day.other, "disabled-date": day.disabled, "selected": day.selected, "is-today": day.today}' ng-repeat='day in week'>{{day.date | date:'d'}}</td>
+                      <td ng-mousedown='selectDate(day.date, true, true);toggleCalendar()' ng-click='$event.preventDefault()' ng-class='{"other-month": day.other, "disabled-date": day.disabled, "selected": day.selected, "is-today": day.today}' ng-repeat='day in week'>{{day.date | date:'d'}}</td>
                     </tr>
                   </tbody>
                 </table>
                 <div class='quickdate-popup-footer'>
-                  <a href='' class='quickdate-button' tabindex='-1' ng-click='toggleCalendar()'>OK</a>
-                  <a href='' class='quickdate-button' tabindex='-1' ng-hide='disableClearButton' ng-click='clear()'>Clear</a>
+                  <a href='' class='quickdate-button' tabindex='-1' ng-if='disableOkButton' ng-click='toggleCalendar()'>OK</a>
+                  <a href='' class='quickdate-button' tabindex='-1' ng-if='!disableClearButton' ng-click='clear()'>Clear</a>
                 </div>
               </div>
             </div>
