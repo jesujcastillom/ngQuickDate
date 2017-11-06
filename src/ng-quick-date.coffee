@@ -392,7 +392,7 @@ app.directive "quickDatepicker", ['ngQuickDateDefaults', '$filter', '$sce', (ngQ
                   </tbody>
                 </table>
                 <div class='quickdate-popup-footer'>
-                  <a href='' class='quickdate-button' tabindex='-1' ng-if='disableOkButton' ng-click='toggleCalendar()'>OK</a>
+                  <a href='' class='quickdate-button' tabindex='-1' ng-if='!disableOkButton' ng-click='toggleCalendar()'>OK</a>
                   <a href='' class='quickdate-button' tabindex='-1' ng-if='!disableClearButton' ng-click='clear()'>Clear</a>
                 </div>
               </div>
