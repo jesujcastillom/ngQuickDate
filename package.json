@@ -5,6 +5,9 @@
     "name": "Adam Albrecht",
     "url": "http://adamalbrecht.com"
   },
+  "scripts": {
+    "prepublish": "grunt"
+  },
   "repository": {
     "url": "git@github.com:jesujcastillom/ngQuickDate.git"
   },
