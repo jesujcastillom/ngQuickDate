@@ -23,6 +23,6 @@
     "grunt-contrib-less": "~0.8.2"
   },
   "dependencies": {
-    "angular": "~1.2.0"
+    "angular": "~1.8.0"
   }
 }
